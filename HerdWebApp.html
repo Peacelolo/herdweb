@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerdTrace - Livestock Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Full-screen video background */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Navbar Logo Styling */
+        .logo {
+            height: 50px; /* Adjust size */
+            width: auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Align items on the left and right */
+            align-items: center;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .navbar .logo-container {
+            flex: 1; /* Pushes the logo to the left */
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            justify-content: flex-end; /* Align links to the right */
+            flex: 3; /* Adjust as needed */
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Video overlay text */
+        .video-overlay {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .video-overlay h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .video-overlay p {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        /* Slideshow text */
+        .slideshow-container {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 90%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slide-text {
+            display: none;
+        }
+
+        .active {
+            display: block;
+            animation: fade 1.5s ease-in-out;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Page-like Sections */
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10%;
+            height: 100vh;
+            background: rgb(152, 206, 206);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section:nth-child(even) {
+            background: rgb(152, 206, 206);
+        }
+
+        .section img {
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        .section .text {
+            width: 55%;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 50px 10%;
+            background: rgb(152, 206, 206);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer Stays at Bottom */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .social-links a:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="HerdTrace Logo" class="logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="about.html">About Us</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <!-- Video Background Section -->
+    <div class="video-container">
+        <video autoplay muted loop id="background-video">
+            <source src="cow1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <h1>HERDTRACE</h1>
+            <p>Track every step. Secure every herd.</p>
+        </div>
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <p class="slide-text active">Get started with HerdTrace and secure your livestock.</p> 
+            <p class="slide-text">Livestock Tracking Made Easy</p>
+            <p class="slide-text">Ensure the safety of your herd at all times.</p>
+        </div>
+    </div>
+
+    <!-- Ear Tag Section -->
+    <div class="section">
+        <div class="text">
+            <h2>Smart Ear Tags for Easy Tracking</h2>
+            <p>Our durable ear tags contain a unique identification number linked to our database. The tag is securely attached to the animal’s ear, ensuring quick identification and monitoring.</p>
+        </div>
+        <img src="eartag.avif" alt="Ear Tag Placeholder">
+    </div>
+
+    <!-- Microchip Section -->
+    <div class="section">
+        <div class="text">
+            <h2>Health Monitoring with Microchips</h2>
+            <p>The embedded microchip continuously tracks vital health data, including temperature and movement. This helps detect early signs of illness and improves livestock management.</p>
+        </div>
+        <img src="microchip.avif" alt="Microchip Placeholder">
+    </div>
+
+    <!-- Mobile & Web App Section -->
+    <div class="section">
+        <div class="text">
+            <h2>Stay Connected with the HerdTrace App</h2>
+            <p>Monitor your livestock anytime, anywhere with our mobile and web apps. Track movements, receive alerts, and access health data in real time.</p>
+        </div>
+        <img src="App.webp" alt="App Screenshot Placeholder">
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 HerdTrace. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide-text");
+
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add("active");
+        }
+
+        setInterval(showSlides, 3000);
+    </script>
+
+</body>
+</html>
