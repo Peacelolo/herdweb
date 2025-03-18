@@ -10,12 +10,10 @@ function showSlides() {
 
 setInterval(showSlides, 3000);
 
-// Toggle navbar links on click of hamburger icon
-const hamburger = document.getElementById('hamburger-icon');
-const navbar = document.querySelector('.navbar');
-
-hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+// JavaScript to toggle the menu visibility
+document.getElementById('hamburger-icon').addEventListener('click', function() {
+    var navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
 });
 
 document.addEventListener("DOMContentLoaded", function () {

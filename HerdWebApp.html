@@ -15,21 +15,25 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container">
-            <a href="index.html">
-                <img src="logo.png" alt="HerdTrace Logo" class="logo">
+            <a href="HerdWebApp.html">
+                <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
             </a>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="nav-links">
             <a href="about.html">About Us</a>
             <a href="signup.html">Sign Up</a>
             <a href="login.html">Login</a>
+        </div>
+        <!-- Hamburger Icon -->
+         <div class="hamburger" id="hamburger-icon">
+            <i class="fa fa-bars"></i>
         </div>
     </nav>
 
     <!-- Video Background Section -->
     <div class="video-container">
         <video autoplay muted loop id="background-video">
-            <source src="cow1.mp4" type="video/mp4">
+            <source src="Videos/cow1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay">
@@ -51,12 +55,12 @@
             <h2>Smart Ear Tags for Easy Tracking</h2>
             <p>Our durable ear tags contain a unique identification number linked to our database. The tag is securely attached to the animal’s ear, ensuring quick identification and monitoring.</p>
         </div>
-        <img src="eartag.avif" alt="Ear Tag Placeholder">
+        <img src="Images/eartag.avif" alt="Ear Tag Placeholder">
     </div>
 
     <!-- Microchip Section -->
      <div class="section">
-        <img src="microchip.avif" alt="Microchip Placeholder">
+        <img src="Images/microchip.avif" alt="Microchip Placeholder">
         <div class="text">
             <h2>Health Monitoring with Microchips</h2>
             <p>The embedded microchip continuously tracks vital health data, including temperature and movement. This helps detect early signs of illness and improves livestock management.</p>
@@ -69,7 +73,7 @@
             <h2>Stay Connected with the HerdTrace App</h2>
             <p>Monitor your livestock anytime, anywhere with our mobile and web apps. Track movements, receive alerts, and access health data in real time.</p>
         </div>
-        <img src="App.webp" alt="App Screenshot Placeholder">
+        <img src="Images/App.webp" alt="App Screenshot Placeholder">
     </div>
 
     <!-- Contact Us Section -->
@@ -85,13 +89,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 HerdTrace. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="footer-container">
+          <p>&copy; 2025 HerdTrace. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+            <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+            <a href="herdtrace@gmail.com"><i class="fas fa-envelope" style="color: white;"></i></a>
+          </div>
         </div>
-    </footer>
+      </footer>
 
     <script src="script.js">
         
