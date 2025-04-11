@@ -1,3 +1,4 @@
+
 /* General styling */
 * {
   margin: 0;
@@ -219,4 +220,31 @@ footer {
 footer p {
   margin: 0;
   color: white;
+}
+/* Dashboard Cards */
+.dashboard-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 20px;
+  width: 40rem;
+  background-color: #fff;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card i {
+  font-size: 2rem;
+}
+
+.dashboard-card h5 {
+  font-weight: bold;
+}
+
+.dashboard-card p {
+  color: #6c757d;
 }

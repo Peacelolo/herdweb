@@ -22,7 +22,7 @@
 }
 
 #sidebar .nav-link {
-  color: white;
+  color: #fafee6;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -37,17 +37,24 @@
   margin-left: 250px;
   padding: 30px;
   transition: margin-left 0.3s ease;
+  background-color: 2B5669;
 }
 
 /* Dashboard Cards */
 .dashboard-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   padding: 20px;
-  width: 40rem;
   background-color: #fff;
+  height: 200px;
+  margin: 10px;
 }
 
 .dashboard-card:hover {
@@ -67,13 +74,14 @@
   color: #6c757d;
 }
 
+
 /* Navbar Styling */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #2B5669;
 }
 
 .navbar a.nav-link {
-  color: white;
+  color: #fafee6;
   padding: 10px 15px;
 }
 
@@ -83,23 +91,35 @@
 
 .navbar-brand {
   font-weight: bold;
-  color: white;
+  color: #fafee6;
 }
 
 /* Footer Styling */
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color: #2B5669;;
   padding: 20px 0;
+  text-align: center;
 }
 
-footer a {
-  color: white;
+footer p {
+  margin: 0;
+  color: #fafee6;
+
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.2rem;
   text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-footer a:hover {
-  color: #ffcc00;
+.social-icons a:hover {
+  transform: scale(1.2);
 }
 
 /* Mobile Responsiveness */

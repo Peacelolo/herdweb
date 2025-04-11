@@ -11,12 +11,13 @@
     </style>
 </head>
 <body>
-
+    
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo-container">
-            <a href="HerdWebApp.html">
-                <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
+        <div class="logo-container d-flex align-items-center">
+            <a href="HerdWebApp.html" class="d-flex align-items-center text-decoration-none">
+                <img src="images/logo.png" alt="HerdTrace Logo" class="logo" style="height: 60px;">
+                <span style="color: #FAFEE6; font-size: 1.5rem; margin-left: 10px;">HerdTrace</span>
             </a>
         </div>
         <div class="nav-links" id="nav-links">
@@ -28,7 +29,7 @@
          <div class="hamburger" id="hamburger-icon">
             <i class="fa fa-bars"></i>
         </div>
-    </nav>
+    </nav>   
 
     <!-- Video Background Section -->
     <div class="video-container">
@@ -49,18 +50,63 @@
         </div>
     </div>
 
+    <!-- Main Content Wrapper -->
+    <div class="flex-grow-1 p-4" style="min-height: 100vh;">
+        <!-- Dashboard Content (cards) go here -->
+        <div class="container mt-5">
+            <div class="row g-4">
+                <!-- what sets us apart -->
+                <div class="col-md-6 col-lg-3", style="width: 30rem;">
+                        <div class="card dashboard-card shadow-lg text-center p-3">
+                            <i class="bi bi-person-circle fs-1 text-primary"></i>
+                            <h5 class="mt-3">What Sets Us Apart</h5>
+                            <p>HerdTrace stands out in the livestock management industry because of our commitment to innovation and security. 
+                                Unlike traditional methods of livestock tracking, our solution uses advanced technology, 
+                                including GPS-enabled ear tags and a mobile app, to offer real-time monitoring of your herd. 
+                                Here’s what sets us apart:</p>
+                        </div>
+                </div>
+
+                <!-- Livestock Registered -->
+                <div class="col-md-6 col-lg-3", style="width: 30rem;">
+                        <div class="card dashboard-card shadow-lg text-center p-3">
+                            <i class="bi bi-box-seam fs-1 text-success"></i>
+                            <h5 class="mt-3">Our Core Features</h5>
+                            <p>Real-time Tracking: Keep track of your livestock anywhere, anytime, with real-time GPS updates.
+                                Offline Capability: Our app works offline, ensuring that you can track your herd even in areas with limited internet connectivity.
+                                Health Monitoring: Track the health and well-being of your livestock with in-depth reports and alerts.
+                                Theft Prevention: Receive instant alerts if any of your animals are moved without authorization.
+                                </p>
+                        </div>
+                </div>
+
+                <!-- Track Livestock -->
+                <div class="col-md-6 col-lg-3", style="width: 30rem;">
+                        <div class="card dashboard-card shadow-lg text-center p-3">
+                            <i class="bi bi-geo-alt fs-1 text-danger"></i>
+                            <h5 class="mt-3">Interested in Protecting Your Livestock?</h5>
+                            <p>Contact us today to learn more about HerdTrace and how we can help you
+                               secure your herd and increase productivity.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <!-- Ear Tag Section -->
-    <div class="section">
+    <div class="section" style="background-color: #2B5669;">
         <div class="text">
             <h2>Smart Ear Tags for Easy Tracking</h2>
             <p>Our durable ear tags contain a unique identification number linked to our database. The tag is securely attached to the animal’s ear, ensuring quick identification and monitoring.</p>
         </div>
-        <img src="Images/eartag.avif" alt="Ear Tag Placeholder">
+        <img src="Images/eartag.avif" alt="Ear Tag Placeholder" style=" height: 400px" style="width: 250;">
     </div>
 
     <!-- Microchip Section -->
-     <div class="section">
-        <img src="Images/microchip.avif" alt="Microchip Placeholder">
+     <div class="section" style="background-color: #FAFEE6;">
+        <img src="Images/microchip.avif" alt="Microchip Placeholder" style=" height: 400px" style="width: 250;">
         <div class="text">
             <h2>Health Monitoring with Microchips</h2>
             <p>The embedded microchip continuously tracks vital health data, including temperature and movement. This helps detect early signs of illness and improves livestock management.</p>
@@ -68,16 +114,16 @@
     </div>
 
     <!-- Mobile & Web App Section -->
-    <div class="section">
+    <div class="section" style="background-color: #2B5669;">
         <div class="text">
             <h2>Stay Connected with the HerdTrace App</h2>
             <p>Monitor your livestock anytime, anywhere with our mobile and web apps. Track movements, receive alerts, and access health data in real time.</p>
         </div>
-        <img src="Images/App.webp" alt="App Screenshot Placeholder">
+        <img src="Images/App.webp" alt="App Screenshot Placeholder" style=" height: 400px" style="width: 250;">
     </div>
 
     <!-- Contact Us Section -->
-    <div class="contact-section">
+    <div class="contact-section"style="background-color: #FAFEE6;">
         <h2>Contact Us</h2>
         <form class="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
             <input type="text" name="name" placeholder="Your Name" required>
