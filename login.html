@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - HerdTrace</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | HerdTrace</title>
+    <link rel="stylesheet" href="loginstyles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.7);">
-        <div class="container-fluid">
-            <div class="logo-container">
-                <a href="HerdWebApp.html">
-                    <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
-                </a>
-            </div>
-            <a class="navbar-brand" href="login.html">HerdTrace</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="HerdWebApp.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="signup.html">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2B5669;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="HerdWebApp.html" class="d-flex align-items-center text-decoration-none">
+                <img src="images/logo.png" alt="HerdTrace Logo" class="logo" style="height: 60px;">
+                <span style="color: #FAFEE6; font-size: 1.5rem; margin-left: 10px;">HerdTrace</span>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="HerdWebApp.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Login Form Section -->
-    <div class="container mt-5">
+    <!-- Login Section -->
+    <div class="container login-container">
         <h2 class="text-center mb-4">Login to Your Account</h2>
-        <form method="POST">
+        <form class="login-form">
             <div class="mb-3">
                 <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" id="email" class="form-control" required />
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" id="password" class="form-control" required />
             </div>
             <div class="text-center">
                 <button type="button" class="btn btn-primary" onclick="redirectToDashboard()">Login</button>
@@ -61,21 +50,25 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="text-white text-center py-4" style="background-color: rgba(0, 0, 0, 0.7);">
-        <p>Contact us: info@herdtrace.com</p>
-        <div>
-            <a href="#" class="text-white me-3">Facebook</a>
-            <a href="#" class="text-white me-3">LinkedIn</a>
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="footer-content text-center">
+            <p>&copy; 2025 HerdTrace. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:herdtrace@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
     <script>
         function redirectToDashboard() {
-            window.location.href = "dashboard.html"; // Redirects to the dashboard without any login validation
+            window.location.href = "dashboard.html";
         }
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

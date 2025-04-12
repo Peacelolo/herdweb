@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Livestock | HerdTrace</title>
+    <link rel="stylesheet" href="register.css">
+    <a href="register_livestock.html"></a>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+<body >
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2B5669;">
+    <div class="container-fluid">
+        <div class="logo-container">
+            <a href="HerdWebApp.html">
+                <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
+            </a>
+        </div>
+        <a class="navbar-brand" href="registerlivestock.html">HerdTrace</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="HerdWebApp.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                </li>                    
+                <li class="nav-item">
+                    <a class="nav-link active" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="registerlivestock.html">Livestock</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="track_livestock.html">Track Livestock</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+   </nav>
+
+    <!-- Register Livestock Form Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Register Livestock</h2>
+        <form action="register_livestock_action.php" method="POST">
+            <div class="mb-3">
+                <label for="livestock_type" class="form-label">Livestock Type</label>
+                <select class="form-select" id="livestock_type" name="livestock_type" required>
+                    <option value="cow">Cow</option>
+                    <option value="sheep">Sheep</option>
+                    <option value="goat">Goat</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="number_of_livestock" class="form-label">Number of Animals</label>
+                <input type="number" class="form-control" id="number_of_livestock" name="number_of_livestock" required>
+            </div>
+            <div class="mb-3">
+                <label for="livestock_details" class="form-label">Livestock Details (e.g., Breed, Age, Color)</label>
+                <textarea class="form-control" id="livestock_details" name="livestock_details" rows="3" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Register Livestock</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 HerdTrace. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+                <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+                <a href="herdtrace@gmail.com"><i class="fas fa-envelope" style="color: white;"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

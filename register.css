@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafee2;
+}
+
+/* Navbar Styling */
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.30s ease-in-out;
+  background-color: #2B5669;
+}
+  
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  /* Default Links Styling */
+  .navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 20px;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #FFD700;
+  }
+
+/* Register Livestock Form */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.form-select, .form-control {
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #2B5669;
+  padding: 20px 0;
+  text-align: center;
+}
+  
+  footer p {
+    margin: 0;
+    color: white;
+  }
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}

@@ -32,17 +32,22 @@
   background-color: #495057;
 }
 
-/* Main Content Area */
+/* Ensure the body and html take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
 .flex-grow-1 {
-  margin-left: 250px;
-  padding: 30px;
-  transition: margin-left 0.3s ease;
-  background-color: 2B5669;
+  flex-grow: 1;
 }
 
 /* Dashboard Cards */
 .dashboard-card {
-  width: 100%;
+  height: auto; /* Remove fixed height to allow content to adjust */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,8 +58,7 @@
   cursor: pointer;
   padding: 20px;
   background-color: #fff;
-  height: 200px;
-  margin: 10px;
+  margin-bottom: 20px; /* Ensure spacing between cards */
 }
 
 .dashboard-card:hover {
@@ -78,6 +82,7 @@
 /* Navbar Styling */
 .navbar {
   background-color: #2B5669;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar a.nav-link {
@@ -91,14 +96,22 @@
 
 .navbar-brand {
   font-weight: bold;
-  color: #fafee6;
+  color: #fafee2;
 }
 
 /* Footer Styling */
-footer {
-  background-color: #2B5669;;
+.footer {
+  background-color: #2B5669;
   padding: 20px 0;
   text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 footer p {

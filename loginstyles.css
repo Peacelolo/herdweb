@@ -1,0 +1,44 @@
+body {
+    background-color: #fafee2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 100px;
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #2B5669;
+    color: #FAFEE2;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons a {
+    color: #FAFEE2;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fafee2;
+}
+
+.navbar-nav .nav-link {
+    color: #FAFEE2 ;
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    text-decoration: none;
+}
