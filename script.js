@@ -125,3 +125,4 @@ document.addEventListener("DOMContentLoaded", function() {
 function dismissAlert() {
   document.querySelector('.alert').remove();
 }
+

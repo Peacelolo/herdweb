@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | HerdTrace</title>
     <link rel="stylesheet" href="aboutstyle.css">
-    <!-- Font Awesome CDN -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For Font Awesome icons -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -29,25 +28,53 @@
         </div>
     </nav>
 
-    <!-- About Us Section -->
-    <div class="about-section">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="hero-title" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Welcome to HerdTrace</h1>
+            </div>
+            <div class="hero-description" data-aos="fade-up" data-aos-duration="1500">
+                <p>Transforming livestock management with technology</p>
+            </div>
+            <div class="hero-button" data-aos="fade-up" data-aos-duration="2000">
+                <a href="#about-us" id="learn-more" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </section>
+  
+    <!-- About Section -->
+    <section class="about-section" id="about-us">
         <h1 class="section-title">About HerdTrace</h1>
+        <div class="content-grid">
+            <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+            <div>
+                <h2>Our Mission</h2>
+                <p>To empower farmers with state-of-the-art tools that ensure safety and productivity. We create seamless, user-friendly livestock solutions to reduce theft and improve operations.</p>
+            </div>
 
-        <p>At <strong>HerdTrace</strong>, we are dedicated to transforming the way farmers manage their livestock. Through the integration of advanced technology and innovation, we provide cutting-edge solutions that ensure the safety, productivity, and well-being of your herd. Our goal is to simplify livestock management while enhancing security and efficiency, giving farmers more control over their operations.</p>
+            <div class="icon-box"><i class="fas fa-eye"></i></div>
+            <div>
+                <h2>Our Vision</h2>
+                <p>We envision a tech-driven farming future with reduced theft, healthier animals, and thriving agricultural communities. HerdTrace will lead this transformation across South Africa and beyond.</p>
+            </div>
 
-        <h2 class="section-title">Our Mission</h2>
-        <p>Our mission is to empower farmers with state-of-the-art tools to protect and optimize their livestock management practices. We strive to create seamless, user-friendly solutions that ensure the safety of your animals, reduce livestock theft, and improve overall productivity. HerdTrace is here to revolutionize the way farmers track, monitor, and manage their herds, improving outcomes for farmers worldwide.</p>
+            <div class="icon-box"><i class="fas fa-heart"></i></div>
+            <div>
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Innovation:</strong> We solve farming challenges using the latest technology.</li>
+                    <li><strong>Integrity:</strong> Transparency and trust are core to our mission.</li>
+                    <li><strong>Security:</strong> Your livestock’s safety is our top priority.</li>
+                    <li><strong>Customer-Centricity:</strong> We build for farmers, with farmers.</li>
+                </ul>
+            </div>
+        </div>
 
-        <h2 class="section-title">Our Vision</h2>
-        <p>We envision a future where technology plays a vital role in improving the agricultural sector by enhancing livestock management. HerdTrace aims to contribute to sustainable farming practices by providing solutions that reduce theft, improve animal health, and support farming communities with innovative tools. We aspire to be a global leader in livestock management technology, creating a safer, smarter, and more efficient world for farmers.</p>
-
-        <h2 class="section-title">Our Values</h2>
-        <ul>
-            <li><strong>Innovation:</strong> We are continuously evolving, using cutting-edge technology to solve traditional farming challenges.</li>
-            <li><strong>Integrity:</strong> We prioritize honesty, transparency, and accountability in all our interactions.</li>
-            <li><strong>Security:</strong> The safety and security of your livestock is our top priority.</li>
-            <li><strong>Customer-Centricity:</strong> We focus on understanding and meeting the needs of our customers, ensuring that they receive the best possible service and solutions.</li>
-        </ul>
+        <div class="culture-section">
+            <h2>Our Culture</h2>
+            <p>At HerdTrace, we foster a culture of teamwork, innovation, and inclusivity. As a company proudly founded by passionate women, we are committed to diversity and empowering others in agriculture and technology.</p>
+        </div>
 
         <h2 class="section-title">Meet Our Team</h2>
         <div class="team-members">
@@ -57,21 +84,18 @@
                 <p>Co-founder & Head of Administration</p>
                 <p>Zomzi brings extensive experience in administrative management and business development.</p>
             </div>
-        
             <div class="team-member">
                 <img src="Images/Zusiphe.jpeg" alt="Zusiphe Makeleni">
                 <h5>Zusiphe Makeleni</h5>
                 <p>Co-founder & Head of Sales and Marketing</p>
                 <p>Zusiphe is a dynamic marketing professional with a background in digital marketing.</p>
             </div>
-        
             <div class="team-member">
                 <img src="Images/Akhona.jpeg" alt="Akhona Dlala">
                 <h5>Akhona Dlala</h5>
                 <p>Co-founder & Head of Finance</p>
                 <p>Akhona is a finance expert responsible for managing the financial health of HerdTrace.</p>
             </div>
-        
             <div class="team-member">
                 <img src="Images/Noxolo.jpeg" alt="Noxolo Mjokovane">
                 <h5>Noxolo Mjokovane</h5>
@@ -79,26 +103,30 @@
                 <p>Noxolo oversees the operations at HerdTrace.</p>
             </div>
         </div>
-        
-        <h2 class="section-title">Our Culture</h2>
-        <p>At HerdTrace, we foster a culture of teamwork, innovation, and inclusivity. We believe in a collaborative environment where everyone contributes to the company’s growth and success. As a company founded by strong, passionate women, we are committed to diversity and empowering others in the technology and agricultural sectors.</p>
-    </div>
+    </section>
+
+    <section class="cta">
+        <h2>Join HerdTrace Today</h2>
+        <p>Ready to take your livestock management to the next level? Join us today and start securing your herd.</p>
+        <a href="signup.html" class="btn btn-primary">Sign Up Now</a>
+    </section>
+    
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-          <p>&copy; 2025 HerdTrace. All rights reserved.</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
-            <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
-            <a href="herdtrace@gmail.com"><i class="fas fa-envelope" style="color: white;"></i></a>
-          </div>
+            <p>&copy; 2025 HerdTrace. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:herdtrace@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
-      </footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
-    <script src="script.js">
-        
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
