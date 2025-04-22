@@ -25,27 +25,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="HerdWebApp.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link active" href="profile.html">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="registerlivestock.html">Livestock</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="track_livestock.html">Track Livestock</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="logout()">Logout</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="HerdWebApp.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>                    
+                    <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="registerlivestock.html">Livestock</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="track_livestock.html">Track Livestock</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="weather.html">Weather</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#" onclick="logout()">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -79,17 +66,8 @@
         </nav>
 
         <!-- Dashboard Content -->
-        <div class="container mt-5">
+        <div class="container mt-5" style="background-color: #FAFEE6;">
             <div class="row g-4">
-                <div class="col-md-6">
-                    <a href="profile.html" class="text-decoration-none">
-                        <div class="card dashboard-card shadow-lg text-center p-3">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
-                            <h5 class="mt-3">Profile</h5>
-                            <p>View & update your farm details.</p>
-                        </div>
-                    </a>
-                </div>
                 <div class="col-md-6">
                     <a href="registerlivestock.html" class="text-decoration-none">
                         <div class="card dashboard-card shadow-lg text-center p-3">
@@ -99,25 +77,34 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-md-6">
+                    <a href="track_livestock.html" class="text-decoration-none">
+                        <div class="card dashboard-card shadow-lg text-center p-3">
+                            <i class="bi bi-geo-alt fs-1 text-danger"></i>
+                            <h5 class="mt-3">Track</h5>
+                            <p>Live location & activity</p>
+                        </div>
+                    </a>
+                </div>
             </div>
          </div>
-            <div class="container mt-5">
+            <div class="container mt-5" style="background-color: #FAFEE6;">
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <a href="track_livestock.html" class="text-decoration-none">
-                            <div class="card dashboard-card shadow-lg text-center p-3">
-                                <i class="bi bi-geo-alt fs-1 text-danger"></i>
-                                <h5 class="mt-3">Track</h5>
-                                <p>Live location & activity</p>
-                            </div>
-                        </a>
-                    </div>
                     <div class="col-md-6">
                         <a href="health.html" class="text-decoration-none">
                             <div class="card dashboard-card shadow-lg text-center p-3">
                                 <i class="bi bi-heart-pulse fs-1 text-warning"></i>
                                 <h5 class="mt-3">Health</h5>
-                                <p>Monitor the health of your Herd</p>
+                                <p>Health monitoring</p>
+                            </div>
+                        </a> 
+                    </div>
+                    <div class="col-md-6">
+                        <a href="weather.html" class="text-decoration-none">
+                            <div class="card dashboard-card shadow-lg text-center p-3">
+                                <i class="bi bi-person-circle fs-1 text-primary"></i>
+                                <h5 class="mt-3">Weather</h5>
+                                <p>View weather updates.</p>
                             </div>
                         </a>
                     </div>

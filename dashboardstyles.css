@@ -33,10 +33,11 @@
 }
 
 /* Ensure the body and html take full height */
-html, body {
+body {
   height: 100%;
   margin: 0;
   display: flex;
+  background-color: #FAFEE6;
   flex-direction: column;
 }
 
@@ -57,7 +58,7 @@ html, body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   padding: 20px;
-  background-color: #fff;
+  background-color: #FAFEE6;
   margin-bottom: 20px; /* Ensure spacing between cards */
 }
 
@@ -75,7 +76,7 @@ html, body {
 }
 
 .dashboard-card p {
-  color: #6c757d;
+  color: #FAFEE6;
 }
 
 
@@ -96,36 +97,41 @@ html, body {
 
 .navbar-brand {
   font-weight: bold;
-  color: #fafee2;
+  color: #fafee6;
 }
 
 /* Footer Styling */
-.footer {
+footer {
   background-color: #2B5669;
-  padding: 20px 0;
+  padding: 30px 0;
+  color: #FAFEE6;
   text-align: center;
-  padding: 10px 0;
-  margin-top: auto;
+  margin-top: -70px;
 }
+
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 20px;
+  gap: 10px;
 }
 
-footer p {
-  margin: 0;
-  color: #fafee6;
+.footer-container .social-icons a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
 
+.footer-container .social-icons a:hover {
+  color: #FFD700;
 }
 
 .social-icons {
-  margin-top: 10px;
+  margin-top: -50px;
 }
 
 .social-icons a {
-  margin: 0 10px;
+  margin: 10px;
   font-size: 1.2rem;
   text-decoration: none;
   transition: transform 0.3s ease;

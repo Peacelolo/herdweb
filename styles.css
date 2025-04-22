@@ -117,7 +117,7 @@
 }
 
 /* Sections - Two Column Layout */
-.section {
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,32 +133,32 @@
   perspective: 1000px;
 }
 
-.section.hidden {
+.container.hidden {
   transform: rotateY(-90deg);
   opacity: 0;
 }
 
-.section.visible {
+.container.visible {
   transform: rotateY(0deg);
   opacity: 1;
 }
 
-.section img {
+.container img {
   width: 40%;
   border-radius: 10px;
 }
 
-.section .text {
+.container .text {
   width: 55%;
   text-align: left;
 }
 
-.section h2 {
+.container h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.section p {
+.container p {
   font-size: 1.5rem;
   line-height: 1.6;
 }
@@ -215,38 +215,91 @@
 /* Footer Styles */
 footer {
   background-color: #2B5669;
-  padding: 20px 0;
+  padding: 30px 0;
+  color: white;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-container .social-icons a {
+  margin: 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-container .social-icons a:hover {
+  color: #FFD700;
+}
+.social-icons a {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Section Styles */
+/* Styling for the container holding the sections */
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem; /* Space between columns */
+  margin-top: 2rem;
+}
+
+/* Styling for each section */
+.section {
+  flex: 1 1 30%; /* Ensures each section takes up 30% of the container width */
+  background-color: #FAFEE6;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.section-text {
   text-align: center;
 }
 
-footer p {
-  margin: 0;
-  color: white;
-}
-/* Dashboard Cards */
-.dashboard-card {
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  padding: 20px;
-  width: 40rem;
-  background-color: #fff;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-card i {
-  font-size: 2rem;
-}
-
-.dashboard-card h5 {
+.section-text h3 {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #2b5669;
+  margin-bottom: 1rem;
 }
 
-.dashboard-card p {
-  color: #6c757d;
+.section-text p {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.5;
+  max-width: 280px;
+  margin: 0 auto;
 }
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .section {
+    flex: 1 1 100%; /* On smaller screens, the sections will stack vertically */
+  }
+}
+
+

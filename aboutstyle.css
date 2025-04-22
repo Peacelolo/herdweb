@@ -89,30 +89,33 @@ body {
 
 
 /* Hero Button Styling */
+.hero-btn {
+    margin-top: 70px; /* space below the description */
+}
+
 .hero-btn .btn {
-    padding: 15px 40px;              
-    font-size: 1.2rem;               
-    font-weight: bold;               
-    border-radius: 50px;             
-    background-color: #f39c12;      
-    color: #fff;                    
-    border: 2px solid #f39c12;      
-    text-transform: uppercase;       
-    text-align: center;              
-    letter-spacing: 1px;             
-    cursor: pointer;                 
-    display: inline-block;            
-    transition: all 0.3s ease-in-out; 
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: #f39c12;
+    color: #fff;
+    border: 2px solid #f39c12;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-btn .btn:hover {
-    background-color: #e67e22;       
-    border-color: #e67e22;           
-    transform: translateY(-5px);     
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #e67e22;
+    border-color: #e67e22;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 /* About Section */
 .about-section {
@@ -225,7 +228,7 @@ body {
 }
 
 .cta .btn {
-    background-color: #2B5669;
+    background-color: #e67e22;
     color: white;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -234,7 +237,7 @@ body {
 }
 
 .cta .btn:hover {
-    background-color: #Fafee2;
+    background-color: #e67e22;
     color: #2B5669;
 }
 
@@ -252,13 +255,14 @@ footer p {
 }
 
 .social-icons a {
+    margin: 10px;
+    font-size: 1.2rem;
     color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #ffcc00;
+    transform: scale(1.2);
 }
 
 /* Responsive */
