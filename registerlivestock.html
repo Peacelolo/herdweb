@@ -1,96 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Livestock | HerdTrace</title>
-    <link rel="stylesheet" href="register.css">
-    <a href="register_livestock.html"></a>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-</head>
-<body >
-    <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2B5669;">
-    <div class="container-fluid">
-        <div class="logo-container">
-            <a href="HerdWebApp.html">
-                <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
-            </a>
-        </div>
-        <a class="navbar-brand" href="registerlivestock.html">HerdTrace</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="HerdWebApp.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
-                </li>                    
-                <li class="nav-item">
-                    <a class="nav-link active" href="profile.html">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="registerlivestock.html">Livestock</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="track_livestock.html">Track Livestock</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" onclick="logout()">Logout</a>
-                </li>
-            </ul>
-        </div>
-      </div>
-   </nav>
 
-    <!-- Register Livestock Form Section -->
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Register Livestock</h2>
-        <form action="register_livestock_action.php" method="POST">
-            <div class="mb-3">
-                <label for="livestock_type" class="form-label">Livestock Type</label>
-                <select class="form-select" id="livestock_type" name="livestock_type" required>
-                    <option value="cow">Cow</option>
-                    <option value="sheep">Sheep</option>
-                    <option value="goat">Goat</option>
-                </select>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register Livestock | HerdTrace</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    </head>
+    <body class="d-flex flex-column" style="min-height: 100vh;">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2B5669;">
+            <div class="container-fluid">
+                <div class="logo-container">
+                    <a href="HerdWebApp.html">
+                        <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
+                    </a>
+                </div>
+                <a class="navbar-brand" href="dashboard.html">HerdTrace</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="HerdWebApp.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>                    
+                        <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="registerlivestock.html">Livestock</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="track_livestock.html">Track Livestock</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="weather.html">Weather</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#" onclick="logout()">Logout</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="number_of_livestock" class="form-label">Number of Animals</label>
-                <input type="number" class="form-control" id="number_of_livestock" name="number_of_livestock" required>
-            </div>
-            <div class="mb-3">
-                <label for="livestock_details" class="form-label">Livestock Details (e.g., Breed, Age, Color)</label>
-                <textarea class="form-control" id="livestock_details" name="livestock_details" rows="3" required></textarea>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Register Livestock</button>
-            </div>
-        </form>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2025 HerdTrace. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
-                <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
-                <a href="herdtrace@gmail.com"><i class="fas fa-envelope" style="color: white;"></i></a>
+        </nav>
+    
+        <!-- Flex Container for Sidebar and Main Content -->
+        <div class="d-flex flex-grow-1">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-dark text-white p-3 vh-100" style="width: 250px;">
+                <h4 class="mb-4">🐄 HerdTrace</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-3">
+                        <a class="nav-link text-white" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link text-white" href="profile.html"><i class="bi bi-person-lines-fill me-2"></i>Profile</a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link text-white" href="registerlivestock.html"><i class="bi bi-clipboard-plus me-2"></i>Register Livestock</a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link text-white" href="track_livestock.html"><i class="bi bi-geo me-2"></i>Track</a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link text-white" href="health.html"><i class="bi bi-heart-pulse me-2"></i>Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- Register Livestock Content -->
+            <div class="container">
+                <h2 class="text-center mb-4">Register Livestock</h2>
+                
+                <!-- Buttons Row (Horizontal) -->
+                <div class="button-row text-center mb-4">
+                    <button class="btn btn-secondary mx-2">Add Sheep</button>
+                    <button class="btn btn-secondary mx-2">Add Cow</button>
+                    <button class="btn btn-secondary mx-2">Add Goat</button>
+                </div>
+                
+                <!-- Form Fields -->
+                <form>
+                    <div class="mb-3">
+                        <label for="animalType" class="form-label">Animal Type</label>
+                        <select id="animalType" class="form-select">
+                            <option value="" disabled selected>Select Animal Type</option>
+                            <option value="sheep">Sheep</option>
+                            <option value="cow">Cow</option>
+                            <option value="goat">Goat</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" id="age" class="form-control" placeholder="Enter age">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="breed" class="form-label">Breed</label>
+                        <input type="text" id="breed" class="form-control" placeholder="Enter breed">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="tagNumber" class="form-label">Tag Number</label>
+                        <input type="text" id="tagNumber" class="form-control" placeholder="Enter tag number">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea id="description" class="form-control" rows="4" placeholder="Enter description"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
             </div>
         </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
+        <footer>
+            <div class="footer-container">
+                <p style="text-align:center">&copy; 2025 HerdTrace. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+                    <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+                    <a href="herdtrace@gmail.com"><i class="fas fa-envelope" style="color: white;"></i></a>
+                </div>
+            </div>
+        </footer>
+    
+        <script>
+            function logout() {
+                sessionStorage.removeItem("loggedIn"); // Clear login session
+                window.location.href = "HerdWebApp.html"; // Redirect to landing page
+            }
+    
+            // Confirm navigation when clicking on a sidebar or card
+            document.querySelectorAll('.nav-link, .dashboard-card').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+                    if (!confirm("Are you sure you want to navigate to this page?")) {
+                        e.preventDefault(); // Prevent the default action (redirect) if the user cancels
+                    }
+                });
+            });
+        </script>
+    
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    
