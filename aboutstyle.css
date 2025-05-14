@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding-top: 90px; 
-    background-color: #fafee2;
+    background-color: #fafee6;
 }
 .main-content {
     margin-top: 60px; 
@@ -37,7 +37,7 @@ body {
   }
   
   .navbar a {
-    color: #fafee2;
+    color: #fafee6;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 400;
@@ -60,7 +60,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding-top: 100px;
-    color: #fafee2;
+    color: #fafee6;
     margin-top: -10px;
 }
 
@@ -111,8 +111,8 @@ body {
 }
 
 .hero-btn .btn:hover {
-    background-color: #e67e22;
-    border-color: #e67e22;
+    background-color: #f39c12;
+    border-color: #f39c12;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -228,7 +228,7 @@ body {
 }
 
 .cta .btn {
-    background-color: #e67e22;
+    background-color: #f39c12;
     color: white;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -237,7 +237,7 @@ body {
 }
 
 .cta .btn:hover {
-    background-color: #e67e22;
+    background-color: #f39c12;
     color: #2B5669;
 }
 
