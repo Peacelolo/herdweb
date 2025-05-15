@@ -31,7 +31,7 @@ body {
 }
 
 .navbar a {
-  color: #fafee2;
+  color: #fafee6;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
@@ -45,7 +45,7 @@ body {
 
 .hero {
   background: url('https://images.unsplash.com/photo-1600334129128-1e3a5f62c49e?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
-  background-image: url('Images/sheeps.jpg'); /* Update with your image path */
+  background-image: url('Images/sheeps.jpg'); 
   height: 100vh;
   display: flex;
   align-items: center;
@@ -148,7 +148,7 @@ body {
 }
 
 #pricing .section-title {
-  color: #2B5669;
+  color: #FAFEE6;
   font-weight: 600;
   margin-bottom: 40px;
 }
@@ -283,7 +283,7 @@ video.img-fluid {
 #faq .section-title {
   font-size: 2rem;
   font-weight: 600;
-  color: #2B5669; 
+  color: #FAFEE6; 
 }
 
 #faq .card {
@@ -343,4 +343,144 @@ video.img-fluid {
     margin-bottom: 1rem;
   }
 }
+.about-herdtrace-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
 
+.about-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Slanted Card */
+.herdtrace-card {
+  background-color: #2B5669;
+  color: #FAFEE6;
+  border: 2px solid #FAFEE6;
+  padding: 2rem;
+  max-width: 500px;
+  transform: skew(-5deg);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.herdtrace-card h2,
+.herdtrace-card p {
+  transform: skew(5deg);
+}
+
+.herdtrace-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FAFEE6;
+}
+
+.herdtrace-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.tech-showcase-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #FAFEE6;
+}
+
+.showcase-title {
+  color: #2B5669;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.card-fan {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.tech-card {
+  width: 220px;
+  background-color: white;
+  border: 2px solid #2B5669;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tech-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.tech-card p {
+  margin-top: 10px;
+  color: #2B5669;
+  font-weight: bold;
+}
+
+/* Rotation like cards in a fan */
+.rotate-left {
+  transform: rotate(-8deg);
+}
+
+.rotate-center {
+  transform: rotate(0deg);
+  z-index: 1;
+}
+
+.rotate-right {
+  transform: rotate(8deg);
+}
+
+
+.card-flip {
+  perspective: 1000px;
+  width: 260px;
+  height: 160px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #FAFEE6;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.card-back {
+  background-color: #2B5669;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  text-align: center;
+}
