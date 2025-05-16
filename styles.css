@@ -534,18 +534,67 @@ video.img-fluid {
 
     .card-body {
       flex: 1;
-     display: flex;
-     flex-direction: column;
-     justify-content: start; /* Moves content higher */
-     padding-top: 1.5rem !important;
-     padding-bottom: 1rem !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: start; /* Moves content higher */
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.2rem !important;
     }
 
     .form-image {
-      height: 450px;   /* Adjust height here */
-      width: 100%;     /* Adjust width here */
+      height: 450px;   
+      width: 100%;     
       object-fit: contain;
       border-radius: 1rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       background-color: #2B5669;
     }
+    /* Join Us Section Styling */
+.join-us-section {
+  background-color: #FAFEE6;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #2B5669;
+}
+
+.join-us-section h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.form-outline input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-outline label {
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+.send-btn {
+  background-color: #2B5669;
+  color: #FAFEE6;
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #1f3f4f;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .join-us-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-outline input {
+    font-size: 0.95rem;
+  }
+}
