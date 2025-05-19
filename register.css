@@ -1,9 +1,11 @@
+/* register.css */
+
 /* General Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fafee2;
+  background-color: #fafee6;
 }
 
 /* Center the container */
@@ -35,6 +37,7 @@ button {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-secondary {
@@ -48,11 +51,12 @@ button {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #6c757d;
   color: white;
   border: none;
-  padding: 12px;
-  font-size: 1.2rem;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  border-radius: 4px;
 }
 
 .btn-primary:hover {
@@ -63,18 +67,33 @@ button {
 .form-label {
   font-size: 1rem;
   font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #2B5669; /* Dark blue for labels */
 }
 
 .form-select, .form-control {
-  font-size: 1.1rem;
-  padding: 12px;
-  border-radius: 5px;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  border-radius: 4px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  border: 1px solid #2B5669;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+
+  
+}
+
+.form-select:focus, .form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 textarea.form-control {
   resize: vertical;
+  min-height: 80px;
 }
 
 /* Footer Styles */
@@ -83,6 +102,7 @@ footer {
   padding: 30px 0;
   color: white;
   text-align: center;
+  font-size: 1rem;
 }
 
 .footer-container {
@@ -95,20 +115,11 @@ footer {
 .footer-container .social-icons a {
   margin: 0 10px;
   font-size: 1.5rem;
-  transition: color 0.3s;
+  color: white;
+  transition: color 0.3s, transform 0.3s ease;
 }
 
 .footer-container .social-icons a:hover {
   color: #FFD700;
-}
-
-.social-icons a {
-  margin: 10px;
-  font-size: 1.2rem;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
   transform: scale(1.2);
 }
