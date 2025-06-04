@@ -110,19 +110,4 @@ dashboardCards.forEach(card => {
         }
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
-  const healthAlerts = 2; // Replace with actual data
-
-  if (healthAlerts > 0) {
-      const alertBox = document.createElement("div");
-      alertBox.classList.add("alert", "alert-warning", "d-flex", "align-items-center");
-      alertBox.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-2"></i><strong>${healthAlerts}</strong> animals need attention. <button class="btn btn-sm btn-link ms-auto" onclick="dismissAlert()">Dismiss</button>`;
-
-      document.body.appendChild(alertBox);
-  }
-});
-
-function dismissAlert() {
-  document.querySelector('.alert').remove();
-}
 

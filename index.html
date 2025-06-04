@@ -4,56 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HerdTrace | Track Every Step</title>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <style>      
-    </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
+    
+ <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2B5669;">
     <div class="logo-container d-flex align-items-center">
-        <a href="HerdWebApp.html" class="d-flex align-items-center text-decoration-none">
+        <a href="index.html" class="d-flex align-items-center text-decoration-none">
             <img src="images/logo.png" alt="HerdTrace Logo" class="logo" style="height: 60px;">
             <span style="color: #FAFEE6; font-size: 1.5rem; margin-left: 10px;">HerdTrace</span>
         </a>
     </div>
     <div class="nav-links" id="nav-links">
-        <a href="HerdWebApp.html">Home</a>
-        <a href="signup.html">Sign Up</a>
-        <a href="login.html">Login</a>
+        <a href="index.html">Home</a>
+        <!-- <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>-->
         <a href="about.html">About Us</a>
-    </div>
-    <!-- Hamburger Icon -->
-     <div class="hamburger" id="hamburger-icon">
-        <i class="fa fa-bars"></i>
     </div>
 </nav>
 
-  <li class="nav-item"><a class="btn btn-custom ms-2" href="#">Login</a></li>
-
   <!-- Hero -->
-  <section class="hero" >
-    <div class="hero-overlay text-center">
-      <div class="video-overlay">
-        <h1>HERDTRACE</h1>
-        <p>Track every step. Secure every herd.</p>
+<section class="hero">
+  <div class="hero-overlay text-center">
+    <div class="video-overlay">
+      <h1 class="brand-title">HERDTRACE</h1>
+      <p class="brand-tagline">Track every step. Secure every herd.</p>
     </div>
 
     <!-- Slideshow Container -->
     <div class="slideshow-container">
-        <p class="slide-text active">Get started with HerdTrace and secure your livestock.</p> 
-        <p class="slide-text">Livestock Tracking Made Easy</p>
-        <p class="slide-text">Ensure the safety of your herd at all times.</p>
+      <p class="slide-text active">Get started with HerdTrace and secure your livestock.</p>
+      <p class="slide-text">Livestock Tracking Made Easy</p>
+      <p class="slide-text">Ensure the safety of your herd at all times.</p>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- Features -->
   <section class="section" id="features" style="background-color: #FAFEE6;" >
@@ -172,7 +165,7 @@
 <!-- ABOUT HERDTRACE SECTION -->
 <div class="about-herdtrace-container" style="background-color: #FAFEE6;">
   <div class="about-image">
-    <img src="Images/sheeps3.jpeg" alt="About HerdTrace Image">
+    <img src="images/sheeps3.jpeg" alt="About HerdTrace Image">
   </div>
 
   <div class="herdtrace-card">
@@ -193,15 +186,15 @@
   <h2 class="showcase-title">Our Smart Tracking Tools</h2>
   <div class="card-fan">
     <div class="tech-card rotate-left">
-      <img src="Images/Tags.jpeg" alt="Ear Tag">
+      <img src="images/Tags.jpeg" alt="Ear Tag">
       <p>Smart Ear Tag</p>
     </div>
     <div class="tech-card rotate-center">
-      <img src="Images/App.webp" alt="HerdTrace App">
+      <img src="images/App.webp" alt="HerdTrace App">
       <p>HerdTrace Mobile App</p>
     </div>
     <div class="tech-card rotate-right">
-      <img src="Images/Microchip.png" alt="Microchip">
+      <img src="images/Microchip.png" alt="Microchip">
       <p>Secure Microchip</p>
     </div>
   </div>
@@ -295,7 +288,7 @@
         <div class="card cascading-right bg-body-tertiary" style="backdrop-filter: blur(30px);">
           <div class="card-body px-5 pt-4 pb-3 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Join Our Waiting List Now!!</h2>
-            <form >
+            <form id="waiting-list-form" action="submit.php" method="post">
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
@@ -330,7 +323,7 @@
     </div>
   </div>
   <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-3">
-    <img src="Images/logo.png" alt="HerdTrace Logo" class="form-image" />
+    <img src="images/logo.png" alt="HerdTrace Logo" class="form-image" />
   </div>
 </div>
 </div>
@@ -349,7 +342,7 @@
       <div class="card-flip">
         <div class="card-inner">
           <div class="card-front">
-            <img src="Images/deviare_logo.jpg" alt="Deviare Logo" style="height: 70px; object-fit: contain;" />
+            <img src="images/deviare_logo.jpg" alt="Deviare Logo" style="height: 70px; object-fit: contain;" />
           </div>
           <div class="card-back">
             <p>Tech skills, business support & digital growth powered by Deviare.</p>
@@ -361,7 +354,7 @@
       <div class="card-flip">
         <div class="card-inner">
           <div class="card-front">
-            <img src="Images/liquidtelecomsa_logo.jpg" alt="Liquid Logo" style="height: 70px; object-fit: contain;" />
+            <img src="images/liquidtelecomsa_logo.jpg" alt="Liquid Logo" style="height: 70px; object-fit: contain;" />
           </div>
           <div class="card-back">
             <p>Connectivity and innovation championed by Liquid Intelligent Technologies.</p>
@@ -383,7 +376,33 @@
     </div>
   </div>
 </footer>
-  <script src="script.js">  </script>
+
+
+  <!-- <script src="script.js">  </script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // HERO Slide Text Rotation
+    const slides = document.querySelectorAll(".slide-text");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+            slide.style.display = "none";
+        });
+        slides[index].classList.add("active");
+        slides[index].style.display = "block";
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3000);
+});
+</script>
 </body>
 </html>

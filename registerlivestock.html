@@ -2,172 +2,294 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register Livestock | HerdTrace</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      background-color: #FAFEE6;
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #fafee6;
     }
-
-    main {
-      flex: 1;
-      display: flex;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Plus Jakarta Sans", sans-serif;
     }
-
-    #sidebar {
-      width: 250px;
-      min-height: calc(100vh - 70px);
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      background-color: #f0f8ff;
     }
-
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: white;
+    /* Form styles */
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      margin: auto;
     }
-
-    footer {
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2B5669;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
       background-color: #2B5669;
       color: white;
-      text-align: center;
-      padding: 1rem 0;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.5rem;
-    }
-
-    .social-icons a:hover {
-      color: #FFD700;
-      transform: scale(1.2);
-    }
-
-    .container {
-      max-width: 700px;
-    }
-
-    .logo {
-      height: 40px;
+    button:hover {
+      background-color: #24495b;
     }
   </style>
 </head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2B5669;">
-    <div class="container-fluid">
-      <a href="HerdWebApp.html">
-        <img src="images/logo.png" alt="HerdTrace Logo" class="logo">
+<body class="min-h-screen flex flex-col bg-[#FAFEE6]">
+  <!-- Header with updated navbar -->
+  <header class="bg-[#2B5669] text-white fixed w-full z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-4">
+        <img src="images/logo.png" alt="HerdTrace Logo" class="h-14 md:h-16" />
+        <span class="text-3xl md:text-4xl font-semibold">HerdTrace</span>
       </a>
-      <a class="navbar-brand ms-2" href="registerlivestock.html">HerdTrace</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="hover:text-yellow-300 font-medium">Home</a>
+        <a href="dashboard.html" class="hover:text-yellow-300 font-medium">Dashboard</a>
+        <a href="profile.html" class="hover:text-yellow-300 font-medium">Profile</a>
+        <a href="support.html" class="hover:text-yellow-300 font-medium">Support</a>
+        <!-- Notifications -->
+        <div class="relative">
+          <button
+            id="notifBtn"
+            class="relative focus:outline-none hover:text-yellow-300"
+            aria-label="Notifications"
+          >
+            <i class="fas fa-bell fa-lg"></i>
+            <span
+              id="notifBadge"
+              class="absolute -top-2 -right-2 bg-red-500 text-xs rounded-full px-1.5"
+              >3</span
+            >
+          </button>
+          <!-- Dropdown -->
+          <div
+            id="notifDropdown"
+            class="hidden absolute right-0 mt-2 w-64 bg-white rounded shadow-lg text-black"
+          >
+            <div class="p-4 border-b font-semibold">Notifications</div>
+            <ul>
+              <li
+                class="p-3 border-b hover:bg-gray-100 cursor-pointer"
+                tabindex="0"
+                role="button"
+              >
+                Livestock health alert for Animal ID #123
+              </li>
+              <li
+                class="p-3 border-b hover:bg-gray-100 cursor-pointer"
+                tabindex="0"
+                role="button"
+              >
+                Weather warning: Heavy rain expected tomorrow
+              </li>
+              <li class="p-3 hover:bg-gray-100 cursor-pointer" tabindex="0" role="button">
+                New support message from admin
+              </li>
+            </ul>
+            <div
+              class="text-center p-2 text-sm text-gray-600 hover:bg-gray-100 cursor-pointer"
+              tabindex="0"
+              role="button"
+            >
+              See all notifications
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Mobile menu button placeholder (optional) -->
+      <button
+        id="mobileMenuBtn"
+        class="md:hidden focus:outline-none text-white"
+        aria-label="Open mobile menu"
+      >
+        <i class="fas fa-bars fa-lg"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="HerdWebApp.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Main Content -->
-  <main style="margin-top: 70px;">
+  <!-- Main layout with sidebar and content -->
+  <div class="flex flex-1 pt-20 min-h-[calc(100vh-5rem)]">
     <!-- Sidebar -->
-    <nav id="sidebar" class="bg-dark text-white p-3">
-      <h4 class="text-center">🐄 HerdTrace</h4>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="dashboard.html"><i class="fa fa-gauge me-2"></i>Dashboard</a></li>
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="profile.html"><i class="fa fa-user me-2"></i>Profile</a></li>
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="registerlivestock.html"><i class="fa fa-plus-square me-2"></i>Register Livestock</a></li>
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="track.html"><i class="fa fa-map-marker-alt me-2"></i>Track</a></li>
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="health.html"><i class="fa fa-heartbeat me-2"></i>Health</a></li>
-        <li class="nav-item mb-2"><a class="nav-link text-white" href="weather.html"><i class="fa fa-cloud-sun me-2"></i>Weather</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="#" onclick="logout()"><i class="fa fa-sign-out-alt me-2"></i>Logout</a></li>
-      </ul>
-    </nav>
+    <aside
+      class="w-64 bg-[#1F3F4C] text-white p-6 flex-shrink-0 flex flex-col"
+    >
+      <h4 class="text-xl font-bold mb-4">🐄 HerdTrace</h4>
+      <nav class="flex flex-col space-y-3 flex-grow">
+        <a href="dashboard.html" class="hover:text-yellow-300"
+          ><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a
+        >
+        <a href="profile.html" class="hover:text-yellow-300"
+          ><i class="fas fa-user mr-2"></i> Profile</a
+        >
+        <a href="registerlivestock.html" class="hover:text-yellow-300"
+          ><i class="fas fa-plus-square mr-2"></i> Register Livestock</a
+        >
+        <a href="track.html" class="hover:text-yellow-300"
+          ><i class="fas fa-map-marker-alt mr-2"></i> Track</a
+        >
+        <a href="health.html" class="hover:text-yellow-300"
+          ><i class="fas fa-heartbeat mr-2"></i> Health</a
+        >
+        <a href="weather.html" class="hover:text-yellow-300"
+          ><i class="fas fa-cloud-sun mr-2"></i> Weather</a
+        >
+        <a
+          href="#"
+          onclick="logout()"
+          class="text-red-400 hover:text-red-600 mt-auto"
+          ><i class="fas fa-sign-out-alt mr-2"></i> Logout</a
+        >
+      </nav>
+    </aside>
 
-    <!-- Register Livestock Form -->
-    <div class="container py-4">
-      <h2 class="mb-4">Register Livestock</h2>
-      <form id="registerForm">
-        <div class="mb-3">
-          <label for="animalId" class="form-label">Animal ID</label>
-          <input type="text" class="form-control" id="animalId" name="animalId" required />
-        </div>
-        <div class="mb-3">
-          <label for="breed" class="form-label">Breed</label>
-          <input type="text" class="form-control" id="breed" name="breed" required />
-        </div>
-        <div class="mb-3">
-          <label for="dob" class="form-label">Date of Birth</label>
-          <input type="date" class="form-control" id="dob" name="dob" required />
-        </div>
-        <div class="mb-3">
-          <label for="gender" class="form-label">Gender</label>
-          <select class="form-control" id="gender" name="gender" required>
-            <option value="" disabled selected>Select gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+    <!-- Content: Register Livestock Form -->
+    <main class="flex-1 p-10">
+      <h1 class="text-4xl font-bold text-[#2B5669] mb-8">Register Livestock</h1>
+      <form action="#" method="POST" id="registerForm" novalidate>
+        <div>
+          <label for="animalType" class="block mb-2 font-semibold text-[#2B5669]">Animal Type</label>
+          <select id="animalType" name="animalType" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <option value="" disabled selected class="text-gray-400">Select animal type</option>
+            <option value="sheep">Sheep</option>
+            <option value="goat">Goat</option>
+            <option value="cattle">Cattle</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="livestockType" class="form-label">Livestock Type</label>
-          <select class="form-control" id="livestockType" name="livestockType" required>
-            <option value="" disabled selected>Select livestock type</option>
-            <option value="Cow">Cow</option>
-            <option value="Sheep">Sheep</option>
-            <option value="Goat">Goat</option>
+        <!-- Age -->
+        <div>
+          <label for="age" class="block mb-2 font-semibold text-[#2B5669]">Age</label>
+          <input type="text" id="age" name="age" placeholder="Enter age" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+        </div>
+        <!-- Breed -->
+        <div>
+          <label for="breed" class="block mb-2 font-semibold text-[#2B5669]">Breed</label>
+          <input type="text" id="breed" name="breed" placeholder="Enter breed" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+        </div>
+
+        <!-- Gender -->
+        <div>
+          <label for="gender" class="block mb-2 font-semibold text-[#2B5669]">Gender</label>
+          <select id="gender" name="gender" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <option value="" disabled selected class="text-gray-400">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
           </select>
         </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary">Register</button>
+
+        <!-- Tag Number -->
+        <div>
+          <label for="tagNumber" class="block mb-2 font-semibold text-gray-700">Tag Number</label>
+          <input type="text" id="tagNumber" name="tagNumber" placeholder="Enter tag number" required
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
         </div>
+
+        <!-- Description -->
+        <div>
+          <label for="description" class="block mb-2 font-semibold text-gray-700">Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Add description"
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+         <div>
+          <button type="submit" class="bg-[#2B5669] text-white font-bold py-3 px-6 rounded w-full transition-colors hover:bg-[#24495b]">
+            Submit
+          </button>
+        </div>
+
+        
       </form>
-    </div>
-  </main>
+    </main>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer mt-auto">
-    <div class="footer-container">
-      <p>&copy; 2025 HerdTrace. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61573172663345" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:herdtrace@gmail.com"><i class="fas fa-envelope"></i></a>
+  <footer class="bg-[#2B5669] text-white py-10">
+    <div class="container mx-auto px-4 text-center">
+      <div class="mb-4">
+        <a
+          href="https://www.facebook.com/profile.php?id=61573172663345"
+          target="_blank"
+          class="mx-3 hover:text-yellow-300"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/herdtrace/posts/?feedView=all"
+          target="_blank"
+          class="mx-3 hover:text-yellow-300"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="mailto:info@herdtrace.co.za" class="mx-3 hover:text-yellow-300"
+          ><i class="fas fa-envelope"></i
+        ></a>
       </div>
+      <p>&copy; 2025 HerdTrace. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Register Script -->
   <script>
-    document.getElementById("registerForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Livestock registered successfully!");
-      this.reset();
+    function logout() {
+      sessionStorage.removeItem("loggedIn");
+      window.location.href = "HerdWebApp.html";
+    }
+
+    const notifBtn = document.getElementById("notifBtn");
+    const notifDropdown = document.getElementById("notifDropdown");
+
+    notifBtn.addEventListener("click", () => {
+      notifDropdown.classList.toggle("hidden");
     });
 
-    function logout() {
-      alert("You have been logged out.");
-      // Add redirect or logout logic here
-    }
+    // Close dropdown when clicking outside
+    window.addEventListener("click", (e) => {
+      if (!notifBtn.contains(e.target) && !notifDropdown.contains(e.target)) {
+        notifDropdown.classList.add("hidden");
+      }
+    });
+
+    // Optional: Form validation
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      if (!this.checkValidity()) {
+        e.preventDefault();
+        alert("Please fill out all required fields correctly.");
+      }
+    });
   </script>
 </body>
 </html>
